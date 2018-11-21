@@ -17,16 +17,21 @@
         </div>
     </section>
     <div class="cs-wrapper fl-wrap">
-        <!-- container  -->
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-            <label class="onoffswitch-label" for="myonoffswitch"></label>
-        </div>
-            <span class="section-separator">
-            </span>
-            <h3 class="soon-title">현재 온도와 습도입니다.</h3>
+        <div class="countdown fl-wrap">
+        <h3 class="soon-title">{{ month }} 월의 간략 전기세</h3>
             <!-- countdown -->
+            <div class="section-title">
+                <h2>113,000원</h2>
+            </div>
+        </div>
+        <!-- container  -->
+{#        <div class="onoffswitch">#}
+{#            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>#}
+{#            <label class="onoffswitch-label" for="myonoffswitch"></label>#}
+{#        </div>#}
+            <span class="section-separator"></span>
             <div class="countdown fl-wrap">
+                <h3 class="soon-title center-header">현재 온도와 습도입니다.</h3>
                 <div class="cs-countdown-item">
                     <span class="days rot">{{ outdoor_temp }}</span>
                     <p>실외기 온도</p>
@@ -42,6 +47,15 @@
                 <div class="cs-countdown-item">
                     <span class="seconds rot2">{{ indoor_hum }}</span>
                     <p>실내 습도</p>
+                </div>
+            </div>
+
+            <span class="section-separator"></span>
+            <div class="countdown fl-wrap">
+                <h3 class="soon-title">AIRCONPLUS가 추천하는 설정! </h3>
+                <!-- countdown -->
+                <div class="section-title">
+                    <h2>113,000원</h2>
                 </div>
             </div>
             <!-- cs-social end -->
