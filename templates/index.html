@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <section class="parallax-section" data-scrollax-parent="true" id="sec1">
+        <div class="bg par-elem "  data-bg="/static/img/bg/aircon.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="section-title center-align">
+                {% if current_user == 'default' %}
+                    <h2><span> 로그인해주세요 </span></h2>
+                {% else %}
+                    <h2><span>{{ current_user }} 님 환영합니다. </span></h2>
+                {% endif %}
+                <div class="breadcrumbs fl-wrap"><a href="#"><span>Home</span></a></div>
+                <span class="section-separator"></span>
+            </div>
+        </div>
+    </section>
+    <div class="cs-wrapper fl-wrap">
+        <!-- container  -->
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch"></label>
+        </div>
+            <span class="section-separator">
+            </span>
+            <h3 class="soon-title">현재 온도와 습도입니다.</h3>
+            <!-- countdown -->
+            <div class="countdown fl-wrap">
+                <div class="cs-countdown-item">
+                    <span class="days rot">{{ outdoor_temp }}</span>
+                    <p>실외기 온도</p>
+                </div>
+                <div class="cs-countdown-item">
+                    <span class="hours rot">{{ outdoor_hum }}</span>
+                    <p>실외기 습도</p>
+                </div>
+                <div class="cs-countdown-item">
+                    <span class="seconds rot2">{{ indoor_temp }}</span>
+                    <p>실내 온도</p>
+                </div>
+                <div class="cs-countdown-item">
+                    <span class="seconds rot2">{{ indoor_hum }}</span>
+                    <p>실내 습도</p>
+                </div>
+            </div>
+            <!-- cs-social end -->
+        <!-- container end -->
+    </div>
+{% endblock body %}
