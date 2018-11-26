@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block script %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{#        <meta http-equiv='refresh' content='5'; >#}
+
+{% endblock script %}
+{% block body %}
+    <!-- wrapper -->
+    <div id="wrapper">
+        <!--Content -->
+        <div class="content">
+            <section class="parallax-section" data-scrollax-parent="true" id="sec1">
+                <div class="bg par-elem "  data-bg="/static/img/bg/aircon.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="section-title center-align">
+                        <h2><span>전력량</span></h2>
+                        <div class="breadcrumbs fl-wrap"><a href="#"><span>use</span></a></div>
+                        <span class="section-separator"></span>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+            <section id="sec2">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>원하는 월을 선택하세요.</h2>
+
+                        <a href="/use/10" class="trs-btn">10</a>
+                        <a href="/use/11" class="trs-btn">11</a>
+                        <a href="/use/12" class="trs-btn">12</a>
+{#                        <div class="dropdown">#}
+{#                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">선택하세요#}
+{#                            <span class="caret"></span>#}
+{#                            </button>#}
+{#                            <ul class="dropdown-menu">#}
+{#                                <li><a href="/use/10">10</a></li>#}
+{#                                <li><a href="/use/11">11</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+            <!--section -->
+            <section class="parallax-section" data-scrollax-parent="true">
+                <div class="bg par-elem "  data-bg="/static/img/bg/aircon.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                <div class="overlay co lor-overlay"></div>
+                <!--container-->
+                <div class="container">
+                    <div class="intro-item fl-wrap">
+                        <h2>Need more information</h2>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+                        <a class="trs-btn" href="contacts.html">Get in Home + </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{%- endblock body %}
