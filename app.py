@@ -19,6 +19,14 @@ try:
         'databaseURL': 'https://capstone-df6bb.firebaseio.com/'
     })
     ref = db.reference(uid, url='https://capstone-df6bb.firebaseio.com/')
+    ref.child('use_power').child("2018-12").child('2').update({
+        'use':3.1,
+        'reduction': 237
+    })
+    ref.child('use_power').child("2018-12").child('23').update({
+        'use': 7.02,
+        'reduction': 623
+    })
 
 except ValueError:
     print("valueError")
@@ -134,13 +142,13 @@ def index():
         if indoor_temp < 21:
             msg = '26도, 강풍, '
         elif 21 <= indoor_temp < 24:
-            msg = '26도, 중간풍, '
+            msg = '26도, 약풍, '
         elif 24 <= indoor_temp < 26:
-            msg = '26도, 약풍, '
+            msg = '26도, 미풍, '
         elif 26 <= indoor_temp < 28:
-            msg = '26도, 약풍, '
+            msg = '26도, 미풍, '
         elif 28 <= indoor_temp < 31:
-            msg = '26도, 중간풍, '
+            msg = '26도, 약풍, '
         elif indoor_temp >=31:
             msg = '26도, 강풍, '
         if indoor_hum >=70:
@@ -173,12 +181,10 @@ def calculator(i, type):
 
     if type == 'use':
         for j in list(data.get(i).keys()):
-            print(j)
-            arr[int(j.split('-')[2]) - 1] = data.get(i).get(j).get('use')
+            arr[int(j)-1] = data.get(i).get(j).get('use')
     else:
         for j in list(data.get(i).keys()):
-            print(j)
-            arr[int(j.split('-')[2]) - 1] = data.get(i).get(j).get('reduction')
+            arr[int(j)-1] = data.get(i).get(j).get('reduction')
 
     return arr
 
@@ -286,10 +292,11 @@ def charttest(usename):
         now = time.localtime()
         month = "%02d" % (now.tm_mon)
 
-        if month == usename:
+        if month == usename.split('-')[1]:
             ref.update({
                 'current_month_price':reduction_month_price
             })
+
 
         return render_template('use.html',name=usename,url=new_strFile,url2=new_strFile2,
                                use_month_price=use_month_price, reduction_month_price=reduction_month_price,
